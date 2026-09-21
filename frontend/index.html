@@ -1,14 +1,383 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- =========================================================
+         DOCUMENT CONFIGURATION
+         ========================================================= -->
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Browser / mobile behavior -->
+    <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#0f172a" />
-    <meta name="description" content="Mini B2B RFQ Marketplace" />
-    <title>RFQ Marketplace</title>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-capable"
+      content="yes"
+    />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="RFQ Marketplace"
+    />
+
+    <!-- Prevent automatic phone number detection -->
+    <meta
+      name="format-detection"
+      content="telephone=no"
+    />
+
+    <!-- Referrer policy -->
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
+
+    <!-- Search engine behavior -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- =========================================================
+         SEO
+         ========================================================= -->
+
+    <title>RFQ Marketplace | B2B Request for Quotation Platform</title>
+
+    <meta
+      name="description"
+      content="RFQ Marketplace is a mini B2B procurement platform where buyers create Requests for Quotation and suppliers discover requirements and submit competitive quotations."
+    />
+
+    <meta
+      name="keywords"
+      content="B2B marketplace, RFQ marketplace, request for quotation, procurement platform, supplier marketplace, buyer marketplace, business quotations, supplier portal"
+    />
+
+    <meta
+      name="author"
+      content="Mahendra Sai Kondaveeti"
+    />
+
+    <meta
+      name="application-name"
+      content="RFQ Marketplace"
+    />
+
+    <link
+      rel="canonical"
+      href="https://mahitech580.github.io/b2b-rfq-marketplace/"
+    />
+
+    <!-- =========================================================
+         OPEN GRAPH
+         ========================================================= -->
+
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:title"
+      content="RFQ Marketplace | B2B Procurement Platform"
+    />
+
+    <meta
+      property="og:description"
+      content="Connect business buyers and suppliers through a streamlined Request for Quotation marketplace."
+    />
+
+    <meta
+      property="og:url"
+      content="https://mahitech580.github.io/b2b-rfq-marketplace/"
+    />
+
+    <meta
+      property="og:site_name"
+      content="RFQ Marketplace"
+    />
+
+    <meta
+      property="og:locale"
+      content="en_IN"
+    />
+
+    <!-- =========================================================
+         TWITTER / X CARD
+         ========================================================= -->
+
+    <meta
+      name="twitter:card"
+      content="summary"
+    />
+
+    <meta
+      name="twitter:title"
+      content="RFQ Marketplace | B2B Procurement Platform"
+    />
+
+    <meta
+      name="twitter:description"
+      content="A B2B marketplace for creating RFQs, discovering business requirements and submitting supplier quotations."
+    />
+
+    <!-- =========================================================
+         SECURITY / PRIVACY
+         ========================================================= -->
+
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- =========================================================
+         PERFORMANCE
+         ========================================================= -->
+
+    <link
+      rel="dns-prefetch"
+      href="//fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <!-- =========================================================
+         FAVICON
+         Built-in SVG; no external favicon file required.
+         ========================================================= -->
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M16 18h32v7H16zm0 11h22v7H16zm0 11h32v7H16z' fill='%2338bdf8'/%3E%3Ccircle cx='47' cy='32' r='7' fill='%2322c55e'/%3E%3C/svg%3E"
+    />
+
+    <!-- =========================================================
+         STRUCTURED DATA
+         ========================================================= -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "RFQ Marketplace",
+        "alternateName": "B2B RFQ Marketplace",
+        "url": "https://mahitech580.github.io/b2b-rfq-marketplace/",
+        "description": "A B2B marketplace where buyers publish Requests for Quotations and suppliers submit quotations.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires JavaScript",
+        "author": {
+          "@type": "Person",
+          "name": "Mahendra Sai Kondaveeti"
+        }
+      }
+    </script>
+
+    <!-- =========================================================
+         EARLY PAGE PAINT
+         ========================================================= -->
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #0f172a;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+
+      /*
+       * Prevent an unstyled blank screen while React is loading.
+       * React replaces this automatically during boot.
+       */
+      .app-loading {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        box-sizing: border-box;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: #e2e8f0;
+        background:
+          radial-gradient(
+            circle at top,
+            #1e293b 0%,
+            #0f172a 48%,
+            #020617 100%
+          );
+      }
+
+      .app-loading-card {
+        width: min(420px, 100%);
+        padding: 32px;
+        text-align: center;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 20px;
+        background: rgba(15, 23, 42, 0.78);
+        box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(14px);
+      }
+
+      .app-loading-logo {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 18px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        color: #ffffff;
+        background: linear-gradient(
+          135deg,
+          #0ea5e9,
+          #2563eb
+        );
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .app-loading-title {
+        margin: 0 0 8px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .app-loading-text {
+        margin: 0;
+        color: #94a3b8;
+        font-size: 14px;
+      }
+
+      .app-loading-spinner {
+        width: 28px;
+        height: 28px;
+        margin: 22px auto 0;
+        border: 3px solid rgba(148, 163, 184, 0.24);
+        border-top-color: #38bdf8;
+        border-radius: 50%;
+        animation: rfq-spin 0.8s linear infinite;
+      }
+
+      @keyframes rfq-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .app-loading-spinner {
+          animation: none;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- =========================================================
+         NOSCRIPT FALLBACK
+         ========================================================= -->
+
+    <noscript>
+      <div
+        style="
+          min-height: 100vh;
+          display: grid;
+          place-items: center;
+          padding: 24px;
+          box-sizing: border-box;
+          font-family: system-ui, sans-serif;
+          background: #f8fafc;
+          color: #0f172a;
+          text-align: center;
+        "
+      >
+        <div>
+          <h1>RFQ Marketplace</h1>
+          <p>
+            JavaScript is required to use this application.
+            Please enable JavaScript in your browser and reload the page.
+          </p>
+        </div>
+      </div>
+    </noscript>
+
+    <!-- =========================================================
+         REACT APPLICATION ROOT
+         ========================================================= -->
+
+    <div id="root">
+      <div class="app-loading" aria-live="polite">
+        <div class="app-loading-card">
+          <div class="app-loading-logo" aria-hidden="true">
+            RF
+          </div>
+
+          <h1 class="app-loading-title">
+            RFQ Marketplace
+          </h1>
+
+          <p class="app-loading-text">
+            Loading your procurement workspace...
+          </p>
+
+          <div
+            class="app-loading-spinner"
+            role="status"
+            aria-label="Loading"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         REACT ENTRY
+         ========================================================= -->
+
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
   </body>
 </html>
+```

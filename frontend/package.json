@@ -1,19 +1,29 @@
+```json
 {
   "name": "b2b-rfq-marketplace-frontend",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Mini B2B RFQ Marketplace frontend built with React and Vite",
+  "author": "Mahendra Sai Kondaveeti",
+  "license": "MIT",
+  "homepage": "https://mahitech580.github.io/b2b-rfq-marketplace/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-router-dom": "latest"
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router-dom": "7.18.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.1",
+    "vite": "8.3.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
 }
+```
