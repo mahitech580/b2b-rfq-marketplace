@@ -1,5 +1,4 @@
-```json
-{
+﻿{
   "name": "b2b-rfq-marketplace-frontend",
   "private": true,
   "version": "1.0.0",
@@ -26,4 +25,3 @@
     "node": ">=20.19.0"
   }
 }
-```
